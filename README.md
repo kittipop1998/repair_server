@@ -4,7 +4,7 @@
 ------------------------------------------
 virtualenv env
 
-.\env\Script\activate สลับมาใช้ (env)
+.\env\Scripts\activate สลับมาใช้ (env)
 
 pip install -r requirements.txt
 

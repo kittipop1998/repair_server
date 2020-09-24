@@ -34,6 +34,7 @@ class Repair(models.Model):
     approve_data = models.DateField(auto_now=True)
     repair_type = models.ForeignKey(RepairType, on_delete=models.SET_NULL, null=True, blank=True)
     user = models.ForeignKey(userprofile_models.UserProfile, on_delete=models.SET_NULL, null=True, blank=True)
+    image = models.FileField(upload_to='up_image', blank=True)
 
     def __str__(self):
         return "{} {}".format(self.repair_type, self.desc)
