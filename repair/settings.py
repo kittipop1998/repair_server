@@ -136,6 +136,10 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:9000"
 ]
 
+CORS_ORIGIN_ALLOW_ALL = True
+
+SITE_ID = 1
+
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
