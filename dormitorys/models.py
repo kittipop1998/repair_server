@@ -3,18 +3,6 @@ from userprofile import models as userprofile_models
 import uuid
 
 
-def random_dormitory_code():
-    return uuid.uuid4().hex[:8.].upper()
-
-
-def random_room_type_code():
-    return uuid.uuid4().hex[:8].upper()
-
-
-def random_room_code():
-    return uuid.uuid4().hex[:8].upper()
-
-
 class Dormitory(models.Model):
     nameDo = models.CharField(max_length=255)
 
@@ -27,4 +15,4 @@ class Room(models.Model):
     nameRo = models.CharField(max_length=255)
     room_type = models.ForeignKey(RoomType, on_delete=models.SET_NULL, null=True, blank=True)
     dormitory = models.ForeignKey(Dormitory, on_delete=models.SET_NULL, null=True, blank=True)
-    user_profile = models.ForeignKey(userprofile_models.UserProfile, on_delete=models.SET_NULL, null=True, blank=True)
+    # user_profile = models.ForeignKey(userprofile_models.UserProfile, on_delete=models.SET_NULL, null=True, blank=True)

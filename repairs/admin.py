@@ -1,3 +1,8 @@
+# from django.contrib import admin
+# from .models import RepairType, Repair
+#
+# admin.site.register(RepairType)
+# admin.site.register(Repair)
 from django.contrib import admin
 from . import models
 
