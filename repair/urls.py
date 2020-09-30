@@ -17,11 +17,9 @@ from django.conf.urls import url
 from django.contrib import admin
 from rest_framework import routers
 from django.urls import path, include
-
 # from repair import views
-router = routers.SimpleRouter()
 
 urlpatterns = [
-    path('api/', include(router.urls)),
     path('admin/', admin.site.urls),
+    path('api/v1', include('userprofile.urls')),
 ]

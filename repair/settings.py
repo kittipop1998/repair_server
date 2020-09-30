@@ -38,15 +38,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
+    'corsheaders',
     'rest_auth',
     'django.contrib.sites',
-    # 'allauth',
-    # 'allauth.account',
+    'allauth',
+    'allauth.account',
     'rest_auth.registration',
     'userprofile',
     'repairs',
     'dormitorys',
-    'corsheaders',
 
 ]
 
@@ -155,10 +155,13 @@ REST_FRAMEWORK = {
 
 }
 
-REST_AUTH_REGISTER_SERIALIZERS = {
-    'REGISTER_SERIALIZER': 'core.serializers.CustomRegisterSerializer',
-}
+# REST_AUTH_REGISTER_SERIALIZERS = {
+#     'REGISTER_SERIALIZER': 'core.serializers.CustomRegisterSerializer',
+# }
+#
+# REST_AUTH_SERIALIZERS = {
+#     'USER_DETAILS_SERIALIZER': 'core.serializers.CustomUserDetailsSerializer',
+# }
 
-REST_AUTH_SERIALIZERS = {
-    'USER_DETAILS_SERIALIZER': 'core.serializers.CustomUserDetailsSerializer',
-}
+
+SITE_ID=1
