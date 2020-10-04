@@ -1,14 +1,5 @@
 from django.db import models
 from userprofile import models as userprofile_models
-import uuid
-
-
-def random_dormitory_code():
-    return uuid.uuid4().hex[:8].upper()
-
-
-def random_room_code():
-    return uuid.uuid4().hex[:8].upper()
 
 
 class RepairType(models.Model):
@@ -32,9 +23,9 @@ class Repair(models.Model):
     request_date = models.DateField(auto_now=True)
     completed_data = models.DateField(auto_now=True)
     approve_data = models.DateField(auto_now=True)
-    repair_type = models.ForeignKey(RepairType, on_delete=models.SET_NULL, null=True, blank=True)
+    image = models.FileField(upload_to='images/', null=True, blank=True)
     user = models.ForeignKey(userprofile_models.UserProfile, on_delete=models.SET_NULL, null=True, blank=True)
-    image = models.FileField(upload_to='up_image', blank=True)
+    repair_type = models.ForeignKey(RepairType, on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return "{} {}".format(self.repair_type, self.desc)

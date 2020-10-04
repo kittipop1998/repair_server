@@ -6,9 +6,15 @@ import uuid
 class Dormitory(models.Model):
     nameDo = models.CharField(max_length=255)
 
+    def __str__(self):
+        return "{}".format(self.nameDo)
+
 
 class RoomType(models.Model):
     nameTy = models.CharField(max_length=255)
+
+    def __str__(self):
+        return "{}".format(self.nameTy)
 
 
 class Room(models.Model):
@@ -16,3 +22,6 @@ class Room(models.Model):
     room_type = models.ForeignKey(RoomType, on_delete=models.SET_NULL, null=True, blank=True)
     dormitory = models.ForeignKey(Dormitory, on_delete=models.SET_NULL, null=True, blank=True)
     # user_profile = models.ForeignKey(userprofile_models.UserProfile, on_delete=models.SET_NULL, null=True, blank=True)
+
+    def __str__(self):
+        return "{}".format(self.room_type)
